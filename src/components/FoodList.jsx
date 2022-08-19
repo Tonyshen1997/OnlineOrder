@@ -1,5 +1,6 @@
 import { PlusOutlined } from "@ant-design/icons";
 import { Button, Card, List, message, Select, Tooltip } from "antd";
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { addItemToCart, getMenus, getRestaurants } from "../utils";
 
@@ -26,6 +27,10 @@ const AddToCartButton = ({ itemId }) => {
       />
     </Tooltip>
   );
+};
+
+AddToCartButton.propTypes = {
+  itemId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 const FoodList = () => {
@@ -77,7 +82,7 @@ const FoodList = () => {
         onChange={() => {}}
       >
         {restaurants.map((item) => {
-          return <Option value={item.id}>{item.name}</Option>;
+          return <Option key={item.id}>{item.name}</Option>;
         })}
       </Select>
       {curRest && (

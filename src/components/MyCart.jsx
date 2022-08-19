@@ -1,6 +1,6 @@
-import { Button, Drawer, List, message, Typography } from 'antd';
-import { useEffect, useState } from 'react';
-import { checkout, getCart } from '../utils';
+import { Button, Drawer, List, message, Typography } from "antd";
+import React, { useEffect, useState } from "react";
+import { checkout, getCart } from "../utils";
 
 const { Text } = Typography;
 
@@ -32,7 +32,7 @@ const MyCart = () => {
     setChecking(true);
     checkout()
       .then(() => {
-        message.success('Successfully checkout');
+        message.success("Successfully checkout");
         setCartVisible(false);
       })
       .catch((err) => {
@@ -64,8 +64,8 @@ const MyCart = () => {
         footer={
           <div
             style={{
-              display: 'flex',
-              justifyContent: 'space-between',
+              display: "flex",
+              justifyContent: "space-between",
             }}
           >
             <Text strong={true}>{`Total price: $${cartData?.totalPrice}`}</Text>

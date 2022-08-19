@@ -1,5 +1,6 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input, message } from "antd";
+import PropTypes from "prop-types";
 import React from "react";
 import { login } from "../utils";
 
@@ -59,5 +60,8 @@ class LoginForm extends React.Component {
     );
   }
 }
+LoginForm.propTypes = {
+  onSuccess: propTypes.func,
+};
 
 export default LoginForm;
